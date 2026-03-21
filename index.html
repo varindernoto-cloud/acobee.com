@@ -463,35 +463,39 @@ footer { background: var(--black); border-top: 1px solid rgba(45,106,79,0.1); pa
   .form-row { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .nav-links.open {
-    display: flex;
-    flex-direction: column;
+    display: block !important;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background: #ffffff;
-    padding: 6rem 2rem 2rem;
-    z-index: 550;
-    gap: 0;
-    box-shadow: 0 8px 32px rgba(45,106,79,0.15);
+    z-index: 9999;
+    padding: 80px 2rem 2rem;
     overflow-y: auto;
-  }
-  .nav-links.open li { 
-    border-bottom: 1px solid rgba(45,106,79,0.1); 
     list-style: none;
   }
-  .nav-links.open a { 
-    display: block; 
-    padding: 1.2rem 0; 
-    font-size: 1rem;
-    font-weight: 700;
-    color: #2D6A4F !important;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-family: 'DM Mono', monospace;
-    text-decoration: none;
-    opacity: 1 !important;
+  .nav-links.open li {
+    display: block !important;
+    border-bottom: 1px solid rgba(45,106,79,0.1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
-  .nav-links.open a:hover { color: #CFAB68 !important; }
-  .hamburger { display: flex; z-index: 600; position: relative; }
+  .nav-links.open li a,
+  .nav-links.open li a.nav-cta {
+    display: block !important;
+    padding: 1.2rem 0.5rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: #2D6A4F !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    font-family: 'DM Mono', monospace !important;
+    text-decoration: none !important;
+    opacity: 1 !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  .hamburger { display: flex; z-index: 99999; position: relative; }
   .hero-title { font-size: 3.2rem; }
   .hero-overlay { padding: 0 1.5rem; }
   .hero-eyebrow { font-size: 0.55rem; letter-spacing: 3px; text-align: center; white-space: normal; padding: 0 1rem; }
@@ -539,7 +543,7 @@ footer { background: var(--black); border-top: 1px solid rgba(45,106,79,0.1); pa
     <li><a href="#about" onclick="closeMenu()">Our Story</a></li>
     <li><a href="#contact" class="nav-cta" onclick="closeMenu()">Contact</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" style="z-index:99999;position:relative;">
     <span></span><span></span><span></span>
   </button>
 </nav>
